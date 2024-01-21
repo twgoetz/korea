@@ -4,7 +4,7 @@ date: 2024-01-19 17:15:21
 tags:
 coverImage: han-wide.jpg
 coverSize: partial
-thumbnailImage: han-wide.jpg
+thumbnailImage: https://lh3.googleusercontent.com/pw/ABLVV86n3UNsVT2_mBkfSRV5jJ_mDtJG_yutReYm8gffS068jhn6bDhunf7BbreS4FvYtSW2-c-a7CP-KB00KpClElV2BrgkQ0bIJuh2Wxavl70PyBpeFcHBJaHUJxw_Bw4r3VffD25BUsDMftBcz8-Ifd6d=w1920-h589-s-no-gm
 autoThumbnailImage: yes
 thumbnailImagePosition: bottom
 ---
