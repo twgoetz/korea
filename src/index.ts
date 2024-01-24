@@ -1,5 +1,7 @@
 const PUBLIC_PATH = "./public";
 
+const publicPath = process.env.PUBLIC_PATH || PUBLIC_PATH;
+
 process.on('SIGTERM', () => {
   console.log('Received exit signal SIGTERM, exiting...');
   process.exit(0);
@@ -8,7 +10,7 @@ process.on('SIGTERM', () => {
 const server = Bun.serve({
   port: 8080,
   async fetch(request) {
-    let path = `${PUBLIC_PATH}${new URL(request.url).pathname}`;
+    let path = `${publicPath}${new URL(request.url).pathname}`;
     if (path.endsWith("/")) {
       // Hexo generates a lot of links that don´t reference files but directories. Not sure how this is
       // normally supposed to work. Let's just serve the corresponding index.html instead if it exists.
