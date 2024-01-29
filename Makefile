@@ -2,6 +2,10 @@ build:
 	bun build src/index.ts --outfile dist/index.js
 	podman build --tag blog .
 
+push:
+	podman tag localhost/blog:latest de.icr.io/nohorizon/blog:${TAG}
+	podman push de.icr.io/nohorizon/blog:${TAG}
+
 run: build
 	podman run -p 8080:8080 --name korea-blog --replace localhost/blog
 

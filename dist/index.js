@@ -1,5 +1,6 @@
 // src/index.ts
 var PUBLIC_PATH = "./public";
+var publicPath = process.env.PUBLIC_PATH || PUBLIC_PATH;
 process.on("SIGTERM", () => {
   console.log("Received exit signal SIGTERM, exiting...");
   process.exit(0);
@@ -7,7 +8,7 @@ process.on("SIGTERM", () => {
 var server = Bun.serve({
   port: 8080,
   async fetch(request) {
-    let path = `${PUBLIC_PATH}${new URL(request.url).pathname}`;
+    let path = `${publicPath}${new URL(request.url).pathname}`;
     if (path.endsWith("/")) {
       path = `${path}index.html`;
     }
